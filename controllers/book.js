@@ -69,7 +69,7 @@ module.exports.displayEditPage = (req, res, next) => {
           res.end(error);
       }
       else{
-          res.render('book/add_edit',{book:bookInfo  })
+          res.render('book/add_edit',{book:bookInfo,title:"Edit book details",actionPath:"/book/edit/"+id  })
       }
   })
 };
@@ -77,6 +77,12 @@ module.exports.displayEditPage = (req, res, next) => {
 // Processes the data submitted from the Edit form to update a book
 module.exports.processEditPage = (req, res, next) => {
   // ADD YOUR CODE HERE
+  let id = req.params.id;
+  let bookInfo = req.body;
+  Book.findOneAndUpdate({_id:id},bookInfo,error=>{
+      if(error) return console.error(error);
+      else res.redirect('/book/list');
+  })
 };
 
 // Deletes a book based on its id.

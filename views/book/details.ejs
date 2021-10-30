@@ -1,42 +1,77 @@
 <%- include ../partials/header.ejs %>
 
-<!-- Content for the Add_Edit page -->
-<div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-6">
-            <h1><%= title %></h1>
+    <!-- Content for the Add_Edit page -->
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+              <div class="card mt-5">
+                  <div class="card-body">
+                    <h1>
+                        <%= title %>
+                    </h1>
+    
+                    <div class="row mt-3">
+                        <!-- <div class="form-group"> -->
+                        <div class="col-md-4">
+                            <label for="bookTextField">Title</label>
+                        </div>
+                        <div class="col-md-8">
+                            <strong>
+                                <%= book.Title %>
+                            </strong>
+                        </div>
+                        <!-- </div> -->
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="bookTextField">Description</label>
+                            </div>
+                            <div class="col-md-8">
+                                <strong>
+                                    <%= book.Description %>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col md-4">
+                                <label for="statusTextField">Price</label>
+                            </div>
+                            <div class="col-md-8">
+                                <strong>$<%= book.Price %></strong>
+    
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="bookTextField">Author</label>
+                            </div>
+                            <div class="col-md-8">
+                                <strong>
+                                    <%= book.Author %>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label for="bookTextField">Genre</label>
+                            </div>
+                            <div class="col-md-8">
+                                <strong>
+                                    <%= book.Genre %>
+                                </strong>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+    
+                    <a href="/book/list" class="btn btn-warning  mt-3">
+                        <i class="fas fa-undo"></i>
+                        Cancel
+                    </a>
+                  </div>
+              </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="bookTextField">Title</label>
-                    <strong><%= book.Title %></strong>
-                </div>
-                <div class="form-group">
-                    <label for="bookTextField">Description</label>
-                    <strong><%= book.Description %></strong>
-                </div>
-                <div class="form-group">
-                    <label for="statusTextField">Price</label>
-                    <strong>$<%= book.Price %></strong>                    
-                </div>
-                <div class="form-group">
-                    <label for="bookTextField">Author</label>
-                    <strong><%= book.Author %></strong>
-                </div>
-                <div class="form-group">
-                    <label for="bookTextField">Genre</label>
-                    <strong><%= book.Genre %></strong>
-                </div>
-                <br />
-                
-                <a href="/book/list" class="btn btn-warning">
-                    <i class="fas fa-undo"></i> 
-                    Cancel
-                </a>
-
-            </form>
         </div>
-
     </div>
-</div>
 
-<%- include ../partials/footer.ejs %>
+    <%- include ../partials/footer.ejs %>
